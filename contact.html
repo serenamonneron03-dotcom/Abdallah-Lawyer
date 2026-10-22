@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Abdallah Law Firm</title>
+
+    <link rel="stylesheet" href="contact.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <span class="logo-mark">A</span>
+            <span class="logo-text">
+                <strong>ABDALLAH</strong>
+                <small>BARRISTER & LEGAL CONSULTANT</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav" id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="lawyer.html">Meet the Lawyer</a>
+            <a href="expertise.html">Expertise</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html" class="active nav-contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <p class="eyebrow">WE'RE HERE TO LISTEN</p>
+                <h1>Let's discuss<br><span>your next step</span></h1>
+                <p>
+                    Have a legal question or guidance about your situation?<br>
+                    Get in touch to make an enquiry or request a consultation.
+                </p>
+            </div>
+
+            <div class="image-label">
+                <span>ABDALLAH</span>
+                <small>LEGAL CONSULTATION</small>
+            </div>
+        </section>
+
+        <section class="contact-main">
+            <div class="contact-info">
+                <p class="info-eyebrow">Get in touch</p>
+                <h2>We're ready<br>to hear from you.</h2>
+                <p class="info-intro">
+                    Contact the firm using the details below or send a message
+                    through the enquiry form.
+                </p>
+
+                <div class="info-item">
+                    <div class="info-icon" aria-hidden="true">⌖</div>
+                    <div>
+                        <h3>Our Office</h3>
+                        <a href="location">
+                            Ebene, Mauritius
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon" aria-hidden="true">✉</div>
+                    <div>
+                        <h3>Email Us</h3>
+                        <a href="mailto:abdallah@gmail.com">
+                            abdallah@gmail.com
+                        </a>                    
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon" aria-hidden="true">☎</div>
+                    <div>
+                        <h3>Call Us</h3>
+                        <a href="tel:+23057995620">+230 5799 5620</a>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <div class="form-heading">
+                    <h2>How can we help?</h2>
+                    <p>Complete the form and tell us how to contact you.</p>
+                </div>
+
+                <form action="https://formspree.io/f/xkjokyvy" method="POST" id="contactForm">
+                    <!-- Hidden field to explicitly send formatted service name to Formspree -->
+                    <input type="hidden" name="selected_service" id="hiddenServiceInput" value="">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+230 ..."
+                                autocomplete="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceSelect">Service Required *</label>
+                            <select id="serviceSelect" name="service" required>
+                                <option value="">Select a Legal Service</option>
+                                <option value="family">Family Law</option>
+                                <option value="criminal">Criminal Law</option>
+                                <option value="labour">Labour / Employment Law</option>
+                                <option value="rental">Tenancy & Rental Law</option>
+                                <option value="commercial">Commercial Law</option>
+                                <option value="contractual">Contractual Disputes</option>
+                                <option value="arbitration">Litigation & Arbitration</option>
+                                <option value="mediation">Mediation</option>
+                                <option value="contract">Contract Drafting</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredDate">Preferred Consultation Date</label>
+                        <input
+                            type="date"
+                            id="preferredDate"
+                            name="preferredDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Briefly describe how we may assist you..."
+                            required></textarea>
+                    </div>
+
+                    <label class="consent">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <span>
+                            I agree to be contacted regarding this enquiry. *
+                        </span>
+                    </label>
+
+                    <button type="submit" class="submit-btn">
+                        Send Enquiry <span>↗</span>
+                    </button>
+
+                    <p id="formStatus" class="form-status" role="status"
+                         aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+        <section class="location-section">
+            <div class="location-content">
+                <div class="location-heading">
+                    <div>
+                        <p class="location-eyebrow"><b>FIND OUR OFFICE</b></p>
+                        <h2>Located in Ebene.</h2>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        title="Map of Ebene, Mauritius"
+                        src="https://maps.google.com/maps?ll=-20.2435,57.4878&z=14&t=m&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+
+                    <div class="map-card">
+                        <span class="map-pin">⌖</span>
+                        <div>
+                            <h3>Abdallah Law Firm</h3>
+                            <p>Ebene, Mauritius</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ebene%2C%20Mauritius"
+                                target="_blank" rel="noopener noreferrer">
+                                Open in Google Maps ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="final-cta">
+            <p class="eyebrow">YOUR NEXT STEP STARTS HERE</p>
+            <h2>Let's find a way forward.</h2>
+            <p>Get in touch to enquire about a consultation or schedule an appointment.</p>
+    
+            <div class="cta-details">
+                <span>🕒 Monday – Friday: 9:00 AM – 5:00 PM</span>
+                <span>📍 Ebene Cybercity, Mauritius</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="footer-brand">ABDALLAH<span>.</span></a>
+        <p>Legal guidance with clarity and care.</p>
+
+        <div class="footer-links">
+            <a href="index.html"><b>Home</b></a>
+            <a href="lawyer.html"><b>Meet the Lawyer</b></a>
+            <a href="expertise.html"><b>Expertise</b></a>
+            <a href="articles.html"><b>Articles</b></a>
+        </div>
+
+        <p class="copyright">
+            © <span id="year"></span> Abdallah. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="contact.js"></script>
+
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+</body>
+</html>

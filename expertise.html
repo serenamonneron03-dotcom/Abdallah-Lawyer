@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Expertise | Abdallah Law Firm</title>
+
+    <link rel="stylesheet" href="expertise.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <span class="logo-mark">A</span>
+            <span class="logo-text">
+                <strong>ABDALLAH</strong>
+                <small>BARRISTER & LEGAL CONSULTANT</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav" id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="lawyer.html">Meet the Lawyer</a>
+            <a href="expertise.html" class="active">Expertise</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html" class="nav-contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">OUR LEGAL SERVICES</p>
+                <h1>Clear advice<br><span>Confident decisions</span></h1>
+                <p class="hero-description">
+                    Every legal matter deserves careful attention.
+                    Discover how our legal services can help you
+                    understand your options and move forward with confidence.
+                </p>
+            </div>
+            <div class="hero-number">
+                <span>LEGAL EXPERTISE</span>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro section-padding">
+            <div class="intro-image-container">
+                <img src="expertise_intro.jpg" alt="Legal Expertise Consultation">
+                <div class="image-card-badge">
+                    <span class="badge-number">10+</span>
+                    <div class="badge-text">
+                        <strong>Years Experience</strong>
+                        <small>Dedicated Legal Guidance</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-content-wrapper">
+                <p class="eyebrow">HOW WE CAN HELP</p>
+                <h2>Legal support for<br>life's important moments</h2>
+                <p class="intro-text">
+                    Legal challenges can feel complicated.<br>
+                    Our approach is to explain the issues clearly,<br>
+                    consider the available options,
+                    and help clients understand the next
+                    steps relevant to their situation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Section: Minimalist List Left, Detail Card Right -->
+        <section class="services section-padding" id="services">
+            <div class="section-heading">
+                <h2>Explore Legal Services</h2>
+            </div>
+
+            <div class="interactive-services-container">
+                <!-- Left Side: Minimalist List of Laws -->
+                <div class="law-list-column">
+                    <ul class="law-items-list" id="lawItemsList">
+                        <li class="law-item active" data-service="family">
+                            <span class="law-title">Family Law</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="criminal">
+                            <span class="law-title">Criminal Law</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="labour">
+                            <span class="law-title">Labour / Employment Law</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="rental">
+                            <span class="law-title">Tenancy & Rental Law</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="commercial">
+                            <span class="law-title">Commercial Law</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="contractual">
+                            <span class="law-title">Contractual Disputes</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="arbitration">
+                            <span class="law-title">Litigation & Arbitration</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="mediation">
+                            <span class="law-title">Mediation</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                        <li class="law-item" data-service="contract">
+                            <span class="law-title">Contract Drafting</span>
+                            <span class="arrow-indicator">→</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Side: Service Details Display Card -->
+                <div class="law-detail-panel" id="lawDetailPanel">
+                    <div class="panel-image-wrapper">
+                        <img id="panelImage" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Family Law">
+                    </div>
+
+                    <div class="panel-body">
+                        <span class="panel-badge">OUR PRACTICE AREA</span>
+                        <h3 id="panelTitle">Family Law</h3>
+                        <p id="panelDescription">
+                            We provide compassionate and practical legal guidance on family matters, including divorce, child custody, maintenance, and other family-related disputes. Our aim is to protect your rights while helping you navigate sensitive situations with care and understanding.
+                        </p>
+                        
+                        <!-- Redirect link to contact page with pre-selected service parameter -->
+                        <a href="contact.html?service=family" class="btn btn-dark panel-cta-btn" id="panelCtaBtn">Make an Enquiry ↗</a>
+
+                        <!-- Navigation mobile -->
+                        <div class="mobile-service-nav">
+                            <span id="service-counter">1 of 9</span>
+                            <div class="service-nav-arrows">
+                                <button type="button" class="service-arrow-btn" id="prev-service-btn" aria-label="Previous Service">←</button>
+                                <button type="button" class="service-arrow-btn" id="next-service-btn" aria-label="Next Service">→</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach -->
+        <section class="approach section-padding">
+            <div class="approach-content">
+                <span class="eyebrow">OUR APPROACH</span>
+                <h2>Law explained<br>with clarity.</h2>
+                <p class="approach-lead">
+                    Good legal guidance starts with listening. Each matter is evaluated on its own unique merits, ensuring transparent communication at every step.
+                </p>
+
+                <div class="approach-steps">
+                    <div class="approach-step-card">
+                        <span class="step-num">01</span>
+                        <div class="step-details">
+                            <h3>Understand Your Situation</h3>
+                            <p>We begin by thoroughly analyzing the core facts and your specific concerns.</p>
+                        </div>
+                    </div>
+
+                    <div class="approach-step-card">
+                        <span class="step-num">02</span>
+                        <div class="step-details">
+                            <h3>Explain Your Options</h3>
+                            <p>Complex legal concepts are translated into clear, actionable advice.</p>
+                        </div>
+                    </div>
+
+                    <div class="approach-step-card">
+                        <span class="step-num">03</span>
+                        <div class="step-details">
+                            <h3>Execute Next Steps</h3>
+                            <p>We guide you smoothly through each phase with confidence and transparency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="approach-image-container">
+                <img 
+                    src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85" 
+                    alt="Legal professional reviewing documents">
+
+                <div class="approach-card-badge">
+                    <span class="badge-icon">⚖️</span>
+                    <div class="badge-text">
+                        <strong>Clarity & Excellence</strong>
+                        <small>Client-Centered Advocacy</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section section-padding">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <span class="eyebrow">LET'S TALK</span>
+                    <h2>Have a legal question?</h2>
+                    <p>
+                        Get in touch to discuss your situation and find out how our tailored legal guidance can assist you.
+                    </p>
+                </div>
+
+                <div class="cta-action">
+                    <a href="contact.html" class="btn btn-gold">
+                        Contact the Firm <span>↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="footer-brand">ABDALLAH<span>.</span></a>
+        <p><b>Legal guidance with clarity and care.</b></p>
+        <div class="footer-links">
+            <a href="index.html"><b>Home</b></a>
+            <a href="lawyer.html"><b>Meet the Lawyer</b></a>
+            <a href="articles.html"><b>Articles</b></a>
+            <a href="contact.html"><b>Contact</b></a>
+        </div>
+        <p class="copyright">
+            © <span id="year"></span> Abdallah. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="expertise.js"></script>
+
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+</body>
+</html>

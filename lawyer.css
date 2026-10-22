@@ -1,0 +1,1366 @@
+:root {
+    --navy: #163A5F;
+    --navy-light: #567C8D;
+    --gold: #C7A56A;
+    --gold-light: #E1C797;
+    --cream: #F7F4EF;
+    --white: #FFFFFF;
+    --text: #263534;
+    --muted: #526777;
+    --border: #E4E0D6;
+
+    --heading: "Playfair Display", Georgia, serif;
+    --body: "DM Sans", Arial, sans-serif;
+    --container: 1160px;
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--body);
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+body.dark-theme {
+    --cream: #182725;
+    --white: #10201F;
+    --text: #E8EEE9;
+    --muted: #B0BDB6;
+    --border: #344542;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(var(--container), 90%);
+    margin-inline: auto;
+}
+
+.section-pad {
+    padding: 100px 0;
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+h1 em,
+h2 em {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.90rem;
+    font-weight: 700;
+    letter-spacing: 0.19em;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   SKIP LINK
+   ========================================= */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+    z-index: 1000;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 10px 15px;
+}
+
+.skip-link:focus {
+    left: 10px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #F7F4EF;
+    color: #163A5F;
+    border-bottom: 1px solid #E4E0D6;
+}
+
+.nav-wrap {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    flex-shrink: 0;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #C7A56A;
+    color: #C7A56A;
+    font-family: var(--heading);
+    font-size: 1.8rem;
+}
+
+.brand-mark span {
+    color: #163A5F;
+}
+
+.brand-name {
+    color: #163A5F;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.3;
+}
+
+.brand-name small {
+    display: block;
+    color: #567C8D;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    margin-top: 4px;
+}
+
+.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.primary-nav a {
+    font-size: 0.90rem;
+    color: #163A5F;
+    transition: color 0.2s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a.active {
+    color: #C7A56A;
+}
+
+.primary-nav .nav-cta {
+    padding: 12px 16px;
+    border: 1px solid #163A5F;
+    color: #163A5F;
+}
+
+.primary-nav .nav-cta:hover {
+    background: #163A5F;
+    color: #FFFFFF;
+}
+
+.menu-toggle,
+.theme-toggle {
+    display: none;
+    border: 1px solid #163A5F;
+    background: transparent;
+    color: #163A5F;
+    padding: 9px 12px;
+}
+
+/* =========================================
+   PAGE HERO
+   ========================================= */
+
+.page-hero {
+    background:
+        linear-gradient(100deg,
+            rgba(22, 58, 95, 0.97),
+            rgba(22, 58, 95, 0.78)),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85") center / cover no-repeat;
+
+    color: #FFFFFF;
+    padding: 85px 0 75px;
+}
+
+.page-hero-content {
+    max-width: var(--container);
+}
+
+.page-hero h1 {
+    color: #FFFFFF;
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: 25px;
+}
+
+.page-hero h1 em {
+    color: #E1C797;
+}
+
+.page-hero-copy {
+    max-width: 570px;
+    color: #E0E7ED;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+.breadcrumbs {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #E0E7ED;
+    font-size: 0.76rem;
+}
+
+.breadcrumbs a {
+    color: #E1C797;
+}
+
+.breadcrumbs span:nth-child(2) {
+    color: #C7A56A;
+}
+
+/* =========================================
+   BIOGRAPHY
+   ========================================= */
+
+.lawyer-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 85px;
+    align-items: center;
+}
+
+.lawyer-photo {
+    position: relative;
+    padding: 0 25px 25px 0;
+}
+
+.lawyer-photo::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    width: 70%;
+    height: 70%;
+    border: 1px solid #C7A56A;
+    z-index: -1;
+}
+
+.lawyer-photo img {
+    width: 100%;
+    height: 510px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-note {
+    position: absolute;
+    left: 0;
+    bottom: 42px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #163A5F;
+    color: #FFFFFF;
+    padding: 17px 23px;
+}
+
+.photo-note-mark {
+    font-family: var(--heading);
+    font-size: 2rem;
+    color: #E1C797;
+}
+
+.photo-note strong,
+.photo-note small {
+    display: block;
+}
+
+.photo-note strong {
+    font-size: 0.9rem;
+}
+
+.photo-note small {
+    color: #E0E7ED;
+    font-size: 0.72rem;
+}
+
+.photo-disclaimer {
+    font-size: 0.67rem;
+    color: #526777;
+    margin: 10px 0 0;
+}
+
+.lawyer-bio h2 {
+    color: #163A5F;
+    margin-bottom: 25px;
+}
+
+.lawyer-bio h2 em {
+    color: #C7A56A;
+}
+
+.lawyer-bio>p:not(.eyebrow) {
+    color: #354F60;
+    font-size: 0.91rem;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    margin: 25px 0;
+    border-top: 1px solid #E4E0D6;
+    border-bottom: 1px solid #E4E0D6;
+}
+
+.profile-details>div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-label {
+    color: #92713B;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.profile-details strong {
+    color: #163A5F;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button {
+    display: inline-flex;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 23px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.button-gold {
+    background: #E1C797;
+    color: #163A5F;
+    border: 1px solid #C7A56A;
+}
+
+.button-gold:hover {
+    background: #C7A56A;
+    border-color: #E1C797;
+    color: #163A5F;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   STATISTICS
+   ========================================= */
+
+.stats-band {
+    padding: 55px 0 25px;
+    background: #163A5F;
+    color: #FFFFFF;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.stat-item {
+    padding: 15px 25px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    display: block;
+    color: #E1C797;
+    font-family: var(--heading);
+    font-size: clamp(2.3rem, 4vw, 3.7rem);
+    line-height: 1.2;
+}
+
+.stat-label {
+    display: block;
+    color: #E0E7ED;
+    font-size: 0.78rem;
+    margin-top: 10px;
+}
+
+.stats-disclaimer {
+    text-align: center;
+    color: #D0DCE5;
+    font-size: 0.65rem;
+    margin: 25px 15px 0;
+}
+
+/* =========================================
+   VALUES
+   ========================================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    color: #163A5F;
+}
+
+.section-heading h2 em {
+    color: #C7A56A;
+}
+
+.section-heading>p {
+    max-width: 380px;
+    color: #526777;
+    font-size: 0.9rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.value-card {
+    position: relative;
+    padding: 35px 28px;
+    background: #F7F4EF;
+    border: 1px solid #E4E0D6;
+    min-height: 290px;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: #C7A56A;
+}
+
+.value-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #567C8D;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+.value-symbol {
+    display: block;
+    color: #C7A56A;
+    font-size: 2.3rem;
+    margin: 20px 0 22px;
+}
+
+.value-card h3 {
+    color: #163A5F;
+    font-size: 1.45rem;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: #526777;
+    font-size: 0.84rem;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   LEGAL EXPERIENCE
+   ========================================= */
+.legal-experience {
+    background:
+        linear-gradient(100deg,
+            rgba(22, 58, 95, 0.60),
+            rgba(22, 58, 95, 0.42)),
+        url(m-background.jpeg)center/cover no-repeat;
+
+    min-height: 600px;
+    padding: 100px 0;
+}
+
+
+/* EXPERIENCE LAYOUT */
+
+.experience-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 75px;
+    align-items: start;
+}
+
+/* LEFT SIDE */
+
+.legal-experience .experience-copy h2 {
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.legal-experience .experience-copy h2 em {
+    color: #E1C797;
+}
+
+.legal-experience .experience-copy>p:not(.eyebrow) {
+    color: #F1F4F7;
+    font-size: 0.91rem;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.legal-experience .eyebrow {
+    color: #E1C797;
+}
+
+/* EXPLORE LINK */
+
+.legal-experience .text-link {
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-bottom: 1px solid #E1C797;
+    padding-bottom: 5px;
+    transition: color 0.25s ease;
+}
+
+.legal-experience .text-link:hover {
+    color: #E1C797;
+}
+
+/* EXPERIENCE ROWS */
+
+.legal-experience .experience-row {
+    display: grid;
+    grid-template-columns: 35px 1fr 25px;
+    align-items: start;
+    gap: 18px;
+    padding: 23px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.legal-experience .experience-row:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.legal-experience .experience-row>span:first-child {
+    color: #E1C797;
+    font-size: 0.72rem;
+    padding-top: 4px;
+}
+
+.legal-experience .experience-row h3 {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.legal-experience .experience-row p {
+    color: #F1F4F7;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.legal-experience .row-arrow {
+    color: #E1C797;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   CALL TO ACTION
+   ========================================= */
+
+.lawyer-cta {
+    background: #F7F4EF;
+    color: #163A5F;
+    padding: 65px 0;
+}
+
+.lawyer-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.lawyer-cta h2 {
+    color: #163A5F;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 12px;
+}
+
+.lawyer-cta h2 em {
+    color: #C7A56A;
+}
+
+.lawyer-cta p:not(.eyebrow) {
+    color: #354F60;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    background: #163A5F;
+    color: #DCE4DF;
+    padding-top: 55px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+    padding-bottom: 40px;
+}
+
+.site-footer .brand-name,
+.site-footer .brand-name strong,
+.site-footer .brand-name span {
+    color: #FFFFFF !important;
+}
+
+.site-footer .brand-name small {
+    color: #E1C797 !important;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.footer-top>p {
+    color: #D0DCE5;
+    font-size: 0.8rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+}
+
+.footer-links a {
+    color: #E0E7ED;
+    font-size: 0.78rem;
+}
+
+.footer-links a:hover {
+    color: #E1C797;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #D0DCE5;
+    font-size: 0.68rem;
+}
+
+.disclaimer {
+    max-width: 450px;
+    text-align: right;
+}
+
+/* =========================================
+   BACK TO TOP
+   ========================================= */
+
+#back-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 80;
+    width: 44px;
+    height: 44px;
+    background: #E1C797;
+    color: #163A5F;
+    border: none;
+    font-size: 1.3rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.25s ease;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* =========================================
+   REVEAL ANIMATIONS
+   ========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE — LAPTOPS
+   ========================================= */
+
+@media (max-width: 1000px) {
+    .primary-nav {
+        gap: 14px;
+    }
+
+    .primary-nav a {
+        font-size: 0.72rem;
+    }
+
+    .lawyer-layout {
+        gap: 45px;
+    }
+
+    .experience-layout {
+        gap: 45px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN — MATCH INDEX HOMEPAGE
+   MEET THE LAWYER PAGE
+   ========================================= */
+
+/* Laptops and tablets */
+@media (max-width: 1050px) {
+
+    .primary-nav {
+        gap: 14px;
+    }
+
+    .primary-nav a {
+        font-size: 0.72rem;
+    }
+
+    .lawyer-layout {
+        gap: 50px;
+    }
+
+    .experience-layout {
+        gap: 45px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .value-card {
+        min-height: 250px;
+    }
+}
+
+/* =========================================
+   MOBILE — SAME LAYOUT AS INDEX
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    img,
+    iframe,
+    video {
+        max-width: 100%;
+    }
+
+    .container,
+    .nav-wrap,
+    .page-hero-content,
+    .lawyer-layout,
+    .experience-layout,
+    .lawyer-cta-content,
+    .footer-top,
+    .footer-bottom {
+        min-width: 0;
+    }
+
+    /* HEADER */
+
+    .nav-wrap {
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .brand {
+        max-width: 100%;
+        gap: 11px;
+    }
+
+    .brand-mark {
+        width: 43px;
+        height: 43px;
+        flex-shrink: 0;
+    }
+
+    .brand-name {
+        font-size: 0.75rem;
+    }
+
+    .brand-name small {
+        font-size: 0.55rem;
+    }
+
+    /* Keep navigation on one horizontal line */
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    .theme-toggle {
+        display: none !important;
+    }
+
+    .primary-nav {
+        display: flex !important;
+        position: static;
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 10px;
+        margin-left: 0;
+        padding: 10px 0;
+        background: transparent;
+        border-top: 1px solid var(--border);
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .primary-nav a {
+        display: inline-block;
+        flex: 0 0 auto;
+        width: auto;
+        padding: 6px 0;
+        font-size: 0.72rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .primary-nav .nav-cta {
+        display: none !important;
+    }
+
+    /* PAGE HERO */
+
+    .page-hero {
+        padding: 60px 0 55px;
+        background-position: center;
+    }
+
+    .page-hero-content {
+        width: 100%;
+    }
+
+    .page-hero h1 {
+        max-width: 100%;
+        font-size: clamp(2.3rem, 8vw, 3.6rem);
+        overflow-wrap: break-word;
+    }
+
+    .page-hero-copy {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .breadcrumbs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* GENERAL SECTION SPACING */
+
+    .section-pad {
+        padding: 65px 0;
+    }
+
+    /* LAWYER BIOGRAPHY */
+
+    .lawyer-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .lawyer-photo {
+        min-width: 0;
+        padding: 0 18px 22px 0;
+    }
+
+    .lawyer-photo img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+        object-position: center top;
+    }
+
+    .lawyer-photo::after {
+        right: 0;
+        bottom: 0;
+        width: 75%;
+        height: 75%;
+    }
+
+    .photo-note {
+        max-width: calc(100% - 10px);
+        bottom: 10px;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .photo-note-mark {
+        font-size: 1.7rem;
+    }
+
+    .photo-note strong {
+        font-size: 0.8rem;
+    }
+
+    .photo-note small {
+        font-size: 0.68rem;
+    }
+
+    .photo-disclaimer {
+        font-size: 0.67rem;
+    }
+
+    .lawyer-bio h2 {
+        font-size: clamp(2rem, 7vw, 2.7rem);
+    }
+
+    .lawyer-bio>p:not(.eyebrow) {
+        font-size: 0.91rem;
+    }
+
+    .profile-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 15px;
+    }
+
+    .profile-details strong {
+        overflow-wrap: anywhere;
+    }
+
+    /* STATISTICS */
+
+    .stats-band {
+        padding: 45px 0 25px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .stat-item {
+        min-width: 0;
+        padding: 18px 10px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .stat-number {
+        font-size: clamp(2rem, 6vw, 2.7rem);
+        overflow-wrap: anywhere;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .stats-disclaimer {
+        line-height: 1.6;
+    }
+
+    /* VALUES */
+
+    .section-heading {
+        display: block;
+        margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+        max-width: 100%;
+        font-size: clamp(2rem, 7vw, 2.7rem);
+    }
+
+    .section-heading>p {
+        max-width: 100%;
+        margin-top: 16px;
+        font-size: 0.88rem;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .value-card {
+        min-width: 0;
+        min-height: 0;
+        padding: 22px 18px;
+    }
+
+    .value-number {
+        top: 15px;
+        right: 15px;
+    }
+
+    .value-symbol {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    .value-card h3 {
+        font-size: 1.2rem;
+        overflow-wrap: break-word;
+    }
+
+    .value-card p {
+        font-size: 0.8rem;
+        overflow-wrap: break-word;
+    }
+
+    /* LEGAL EXPERIENCE */
+
+    .legal-experience {
+        min-height: auto;
+        padding: 65px 0;
+        background-position: center;
+    }
+
+    .experience-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .legal-experience .experience-copy h2 {
+        font-size: clamp(2rem, 7vw, 2.7rem);
+    }
+
+    .legal-experience .experience-row {
+        grid-template-columns: 30px minmax(0, 1fr) 20px;
+        gap: 12px;
+        padding: 20px 0;
+    }
+
+    .legal-experience .experience-row h3 {
+        font-size: 1.1rem;
+        overflow-wrap: break-word;
+    }
+
+    .legal-experience .experience-row p {
+        font-size: 0.8rem;
+    }
+
+    /* CALL TO ACTION */
+
+    .lawyer-cta {
+        padding: 55px 0;
+    }
+
+    .lawyer-cta-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lawyer-cta h2 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    .lawyer-cta-content .button {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* FOOTER */
+
+    .footer-top {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+    }
+
+    .disclaimer {
+        max-width: 100%;
+        text-align: left;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .section-pad {
+        padding: 60px 0;
+    }
+
+    .page-hero {
+        padding: 50px 0 45px;
+    }
+
+    .page-hero h1 {
+        font-size: clamp(2.1rem, 9vw, 2.8rem);
+    }
+
+
+    .lawyer-photo img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+        object-position: center top;
+    }
+
+    .profile-details {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .stat-item,
+    .stat-item:nth-child(2n) {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .values-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .value-card {
+        padding: 22px;
+    }
+
+    .legal-experience {
+        padding: 55px 0;
+    }
+
+    .legal-experience .experience-row {
+        grid-template-columns: 25px minmax(0, 1fr) 18px;
+        gap: 10px;
+    }
+
+    .footer-links {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #back-to-top {
+        right: 14px;
+        bottom: 14px;
+    }
+}
+
+/* =========================================
+   EXTRA-SMALL PHONES
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .brand {
+        gap: 7px;
+    }
+
+    .brand-mark {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+    }
+
+    .brand-name {
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+    }
+
+    .brand-name small {
+        font-size: 0.48rem;
+        letter-spacing: 0.1em;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .value-card {
+        padding: 18px;
+    }
+
+    .photo-note {
+        padding: 10px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.primary-nav .nav-cta {
+    display: none !important;
+}
+
+.primary-nav {
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.primary-nav a {
+    font-weight: 700;
+}
